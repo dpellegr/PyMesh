@@ -1,3 +1,5 @@
+#ifdef WITH_GEOGRAM
+
 #include <memory>
 
 #include <pybind11/pybind11.h>
@@ -23,3 +25,5 @@ void init_Geogram(py::module &m) {
             GeogramMeshIO::save_mesh(filename, geo_mesh);
             });
 }
+
+#endif

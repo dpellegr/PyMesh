@@ -1,5 +1,7 @@
 /* This file is part of PyMesh. Copyright (c) 2018 by Qingnan Zhou */
 
+#ifdef WITH_JIGSAW
+
 #include "FrontalDelaunay.h"
 extern "C" {
 #include <lib_jigsaw.h>
@@ -87,3 +89,5 @@ void Jigsaw::FrontalDelaunay::run() {
     jigsaw_free_msh_t(&input_mesh);
     jigsaw_free_msh_t(&output_mesh);
 }
+
+#endif

@@ -207,7 +207,8 @@ void ClipperEngine::extract_result(const ClipperLib::Paths& paths) {
         }
         count+=loop_size;
     }
-
+    
+    #ifdef WITH_TRIANGLE
     if (num_segments > 0) {
         // Known issue: duplicated vertices from different loops cause triangle to crash.
         ::remove_duplicated_vertices(loop_vertices, segments);
@@ -223,6 +224,7 @@ void ClipperEngine::extract_result(const ClipperLib::Paths& paths) {
         m_vertices = tri_wrapper.get_vertices();
         m_faces = tri_wrapper.get_faces();
     }
+    #endif
 }
 
 #endif

@@ -39,7 +39,7 @@ class CGALMeshTraitsWithFeature {
             typename CGAL::Kernel_traits<Domain>::Kernel,
             typename CGAL::Parallel_tag>::type;
 #else
-        using Triangulation = typename CGAL::Mesh_triangulation_3<domain>::type;
+        using Triangulation = typename CGAL::Mesh_triangulation_3<Domain>::type;
 #endif
         using C3t3 = CGAL::Mesh_complex_3_in_triangulation_3<
             Triangulation,
@@ -57,7 +57,7 @@ class CGALMeshTraits {
             typename CGAL::Kernel_traits<Domain>::Kernel,
             typename CGAL::Parallel_tag>::type;
 #else
-        using Triangulation = typename CGAL::Mesh_triangulation_3<domain>::type;
+        using Triangulation = typename CGAL::Mesh_triangulation_3<Domain>::type;
 #endif
         using C3t3 = CGAL::Mesh_complex_3_in_triangulation_3<Triangulation>;
         using Criteria = CGAL::Mesh_criteria_3<Triangulation>;
